@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'vinyl_player'
+require 'pry'
 
 RSpec.describe VinylPlayer do
   context 'vinyl player can be created' do
@@ -35,15 +36,18 @@ RSpec.describe VinylPlayer do
     end
   end
 
-  # context 'turntable can be turned' do
-  #   it 'on' do
+  context 'cannot turn vinyl player ' do
+    it 'on if already on' do
+      vinyl = VinylPlayer.new
+      vinyl.turn_on
+      expect{ vinyl.turn_on }.to raise_error 'Turntable is already on'
+    end
 
-  #   end
-
-  #   it 'off' do
-
-  #   end
-  # end
+    it 'off if already off' do
+      vinyl = VinylPlayer.new
+      expect{ vinyl.turn_off }.to raise_error 'Turntable is already off'
+    end
+  end
 end
 
 # - Vinyl player can be turned on
