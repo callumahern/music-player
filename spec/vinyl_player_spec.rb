@@ -22,6 +22,19 @@ RSpec.describe VinylPlayer do
     end
   end
 
+  context 'vinyl player has a persistent state' do
+    it 'and defaults as off when created' do
+      vinyl = VinylPlayer.new
+      expect(vinyl.state).to eq :off
+    end
+
+    it '#turn_on changes #state' do
+      vinyl = VinylPlayer.new
+      vinyl.turn_on
+      expect(vinyl.state).to eq :on
+    end
+  end
+
   # context 'turntable can be turned' do
   #   it 'on' do
 
