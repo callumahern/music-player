@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'vinyl_player'
 
 RSpec.describe VinylPlayer do
@@ -19,7 +21,7 @@ RSpec.describe VinylPlayer do
       expect(vinyl).to respond_to :turn_off
     end
   end
-  
+
   # context 'turntable can be turned' do
   #   it 'on' do
 
@@ -31,9 +33,8 @@ RSpec.describe VinylPlayer do
   # end
 end
 
-
-# - Vinyl player can be turned on 
+# - Vinyl player can be turned on
 # - Vinyl player can be turned off
-# - Record can be placed on vinyl player 
+# - Record can be placed on vinyl player
 # - Record can be played
 # - Record can be turned over (side A / side B)
