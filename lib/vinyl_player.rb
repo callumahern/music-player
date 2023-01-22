@@ -9,14 +9,24 @@ class VinylPlayer
   end
 
   def turn_on
-    raise 'Turntable is already on' if @state == :on
+    turnable_already_on_error?
 
     @state = :on
   end
 
   def turn_off
-    raise 'Turntable is already off' if @state == :off
+    turnable_already_off_error?
 
     @state = :off
+  end
+
+  private
+
+  def turnable_already_on_error?
+    raise 'Turntable is already on' if @state == :on
+  end
+
+  def turnable_already_off_error?
+    raise 'Turntable is already off' if @state == :off
   end
 end
